@@ -1,10 +1,13 @@
 package br.ucsal.biblioteca.view;
 
 import br.ucsal.biblioteca.controller.Biblioteca;
+import br.ucsal.biblioteca.controller.LembreteDevolucao;
 import br.ucsal.biblioteca.model.Emprestimo;
 import br.ucsal.biblioteca.model.Livro;
 import br.ucsal.biblioteca.model.Usuario;
 
+import javax.swing.text.View;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -15,9 +18,11 @@ public class Console {
     private final Scanner scanner = new Scanner(System.in);
 
     private final Biblioteca biblioteca;
+    private final Thread threadLembrete;
 
-    public Console(Biblioteca biblioteca){
+    public Console(Biblioteca biblioteca, Thread threadLembrete) {
         this.biblioteca = biblioteca;
+        this.threadLembrete = threadLembrete;
     }
 
     public void iniciarConsole() {
@@ -28,7 +33,7 @@ public class Console {
             System.out.println("2. Adicionar Usuário");
             System.out.println("3. Empréstimo de Livro");
             System.out.println("4. Devolução de Livro");
-            System.out.println("5. Enviar Lembretes de Devolução");
+            System.out.println("5. Enviar lembretes de Devolução");
             System.out.println("6. Listar Usuários");
             System.out.println("7. Sair");
             System.out.print("Escolha uma opção: ");
@@ -204,6 +209,4 @@ public class Console {
         biblioteca.enviarLembretesDevolucao();
         System.out.println("\n--- Lembretes de Devolução Enviados---");
     }
-
-
 }

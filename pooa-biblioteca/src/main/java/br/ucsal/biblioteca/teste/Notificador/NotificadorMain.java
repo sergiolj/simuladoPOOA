@@ -1,9 +1,9 @@
-package br.ucsal.biblioteca.teste.Notificador;
+package br.ucsal.biblioteca.teste.notificador;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class NotificadorExecute {
+public class NotificadorMain {
     public static void main(String[] args) {
         Set<Notificador> canais = new HashSet<Notificador>();
         canais.add(new EmailNotificador());

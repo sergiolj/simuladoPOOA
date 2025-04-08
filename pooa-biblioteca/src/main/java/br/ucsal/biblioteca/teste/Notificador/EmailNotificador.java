@@ -1,4 +1,4 @@
-package br.ucsal.biblioteca.teste.Notificador;
+package br.ucsal.biblioteca.teste.notificador;
 
 public class EmailNotificador implements Notificador{
     @Override
