@@ -18,7 +18,7 @@ public class LembreteDevolucao implements Runnable{
                 Thread.sleep(timeSleep.toMillis());
             }catch(InterruptedException e){
                 Thread.currentThread().interrupt();
-                System.out.println("Encerrando Thread..." + e.getMessage());
+                System.out.println("Thread interrompida..." + e.getMessage());
                 break;
             }
         }
