@@ -1,7 +1,5 @@
 package br.ucsal.biblioteca.threads.tests;
 
-import java.time.Duration;
-
 public class TestAlarm {
     public static void main(String[] args) {
         int countDown = 30;

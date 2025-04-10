@@ -28,10 +28,10 @@ public class ClassInfoComplete {
             String modifier = Modifier.toString(method.getModifiers());
             sb.append("\n").append(modifier).append(" ");
             sb.append(method.getName()).append(" ");
-            Class<?>[] paramTypes = method.getParameterTypes();
+            Class<?>[] classes = method.getParameterTypes();
             sb.append("(");
-            for (Class<?> paramType : paramTypes) {
-                sb.append(paramType.getSimpleName());
+            for (Class<?> classParameter : classes) {
+                sb.append(classParameter.getSimpleName());
             }
             sb.append(")");
         }

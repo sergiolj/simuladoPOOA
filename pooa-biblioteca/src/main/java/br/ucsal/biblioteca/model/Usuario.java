@@ -1,11 +1,15 @@
 package br.ucsal.biblioteca.model;
 
+import br.ucsal.biblioteca.anotation.ValidateStringLength;
+import br.ucsal.biblioteca.reflection.Validator;
+
 public class Usuario {
 
     private static Integer contadorId = 1;
 
     private int id;
 
+    @ValidateStringLength(min = 3)
     private String nome;
 
     public Usuario(String nome) {
@@ -33,4 +37,7 @@ public class Usuario {
         System.out.println("Nome: " + nome + "\nId: " + id);
     }
 
+    public boolean isValid() {
+        return Validator.validateFields(this);
+    }
 }

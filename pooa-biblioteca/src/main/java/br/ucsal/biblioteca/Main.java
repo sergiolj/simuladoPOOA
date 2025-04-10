@@ -5,6 +5,7 @@ import br.ucsal.biblioteca.controller.LembreteDevolucao;
 import br.ucsal.biblioteca.model.Emprestimo;
 import br.ucsal.biblioteca.model.Livro;
 import br.ucsal.biblioteca.model.Usuario;
+import br.ucsal.biblioteca.reflection.ListUsersConsole;
 import br.ucsal.biblioteca.view.Console;
 
 import java.time.Duration;
@@ -19,6 +20,10 @@ public class Main {
         lembrete.start();
 
         fazerCargaInicial(biblioteca);
+
+       ListUsersConsole.printObjectList(biblioteca,"usuarios");
+       ListUsersConsole.printObjectList(biblioteca,"livros");
+
         Console sistema = new Console(biblioteca, lembrete);
 
         Thread terminateLembrete = new Thread(() -> {

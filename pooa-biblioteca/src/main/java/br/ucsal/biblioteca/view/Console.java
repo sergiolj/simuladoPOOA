@@ -1,9 +1,11 @@
 package br.ucsal.biblioteca.view;
 
+import br.ucsal.biblioteca.anotation.ValidateStringLength;
 import br.ucsal.biblioteca.controller.Biblioteca;
 import br.ucsal.biblioteca.model.Emprestimo;
 import br.ucsal.biblioteca.model.Livro;
 import br.ucsal.biblioteca.model.Usuario;
+import br.ucsal.biblioteca.reflection.Validator;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -99,12 +101,12 @@ public class Console {
         System.out.print("Nome: ");
         String nome = scanner.nextLine();
         Usuario usuario = new Usuario(nome);
-        if (usuario.getNome().length() < 3) {
-            System.out.println("Erro: O título deve ter pelo menos 3 caracteres.");
-        } else {
+        if(Validator.validateFields(usuario)){
             biblioteca.adicionarUsuario(usuario);
             System.out.println("ID Usuário: " + usuario.getId());
             System.out.println("Usuário registrado com sucesso.");
+        }else{
+            System.out.println("Erro: O nome de usuário deve ter pelo menos 3 caracteres.");
         }
     }
 

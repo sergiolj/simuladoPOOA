@@ -11,13 +11,11 @@ public class LembreteDevolucao implements Runnable{
 
     @Override
     public void run() {
-        Duration timeSleep = Duration.ofSeconds(5);
         while(true){
-            biblioteca.enviarLembretesDevolucao();
             try{
-                Thread.sleep(timeSleep.toMillis());
+                biblioteca.enviarLembretesDevolucao();
+                Thread.sleep(Duration.ofSeconds(5).toMillis());
             }catch(InterruptedException e){
-                Thread.currentThread().interrupt();
                 System.out.println("Thread interrompida..." + e.getMessage());
                 break;
             }
