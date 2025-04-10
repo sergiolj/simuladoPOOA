@@ -15,7 +15,7 @@ public class Timer implements Runnable {
     @Override
     public void run() {
         System.out.println("Begin counting " + secondsStep + " seconds delay " + numberOfRepetitions + " times");
-        for(int i = 1; i <= numberOfRepetitions; i++) {
+        for(int i = 1; i < numberOfRepetitions + 1; i++) {
             try {
                 Thread.sleep(Duration.ofSeconds(secondsStep).toMillis());
                 System.out.println("Elapsed time: about " + (secondsStep * i) + " seconds");

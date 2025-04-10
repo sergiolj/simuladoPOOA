@@ -1,13 +1,10 @@
 package br.ucsal.biblioteca.view;
 
 import br.ucsal.biblioteca.controller.Biblioteca;
-import br.ucsal.biblioteca.controller.LembreteDevolucao;
 import br.ucsal.biblioteca.model.Emprestimo;
 import br.ucsal.biblioteca.model.Livro;
 import br.ucsal.biblioteca.model.Usuario;
 
-import javax.swing.text.View;
-import java.time.Duration;
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -73,8 +70,8 @@ public class Console {
     private void listarUsuariosConsole() {
         System.out.println("\n--- Listar Usuarios ---");
         for (Usuario usuario : biblioteca.getUsuarios()) {
-            System.out.println("Id: "+usuario.getId());
-            System.out.println("Nome: "+usuario.getNome());
+            System.out.println("Id: "+ usuario.getId());
+            System.out.println("Nome: "+ usuario.getNome());
         }
     }
 

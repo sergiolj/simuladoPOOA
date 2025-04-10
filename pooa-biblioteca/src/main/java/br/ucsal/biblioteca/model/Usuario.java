@@ -1,7 +1,5 @@
 package br.ucsal.biblioteca.model;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class Usuario {
 
     private static Integer contadorId = 1;
@@ -13,6 +11,9 @@ public class Usuario {
     public Usuario(String nome) {
         this.id = contadorId++;
         this.nome = nome;
+    }
+    private Usuario() {
+        this.id = contadorId++;
     }
 
     // Métodos getters e setters
@@ -26,6 +27,10 @@ public class Usuario {
 
     public int getId() {
         return id;
+    }
+
+    private void getPrivateInfo() {
+        System.out.println("Nome: " + nome + "\nId: " + id);
     }
 
 }
